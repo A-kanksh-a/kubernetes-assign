@@ -1,7 +1,0 @@
-domain: example.com
-repo: github.com/programming-kubernetes/cnat/step-kubebuilder
-resources:
-- group: webapp
-  kind: Step
-  version: v1
-version: "2"
