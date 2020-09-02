@@ -1,0 +1,6 @@
+
+bases:
+- ../samples/
+
+patchesStrategicMerge:
+- custom-namespace.yaml

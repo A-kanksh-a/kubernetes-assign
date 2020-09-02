@@ -1,0 +1,7 @@
+apiVersion: webapp.example.com/v1
+kind: Step
+metadata:
+  name: step-sample
+spec:
+  # Add fields here
+  podnamespace: example
