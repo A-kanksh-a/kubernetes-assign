@@ -4,4 +4,4 @@ metadata:
   name: step-sample
 spec:
   # Add fields here
-  foo: bar
+  podnamespace: kube-system
