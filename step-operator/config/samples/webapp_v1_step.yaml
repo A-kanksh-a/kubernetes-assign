@@ -1,0 +1,7 @@
+apiVersion: webapp.infracloud.io/v1
+kind: Step
+metadata:
+  name: step-sample
+spec:
+  # Add fields here
+  foo: bar

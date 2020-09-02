@@ -1,0 +1,77 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.5
+  creationTimestamp: null
+  name: steps.webapp.example.com
+spec:
+  additionalPrinterColumns:
+  - JSONPath: .status.phase
+    name: PHASE
+    type: string
+  - JSONPath: .status.lastUpdate
+    name: LASTUPDATE
+    type: string
+  group: webapp.example.com
+  names:
+    kind: Step
+    listKind: StepList
+    plural: steps
+    singular: step
+  scope: Namespaced
+  subresources:
+    status: {}
+  validation:
+    openAPIV3Schema:
+      description: Step is the Schema for the steps API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: StepSpec defines the desired state of Step
+          properties:
+            podnamespace:
+              description: PodNamespace is an example field of Step. Edit Step_types.go
+                to remove/update
+              type: string
+          type: object
+        status:
+          description: StepStatus defines the observed state of Step
+          properties:
+            lastUpdate:
+              description: 'Important: Run "make" to regenerate code after modifying
+                this file'
+              format: date-time
+              type: string
+            phase:
+              description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                of cluster Important: Run "make" to regenerate code after modifying
+                this file Phase represents the state of the schedule: until the command
+                is executed it is PENDING, afterwards it is DONE.'
+              type: string
+          type: object
+      type: object
+  version: v1
+  versions:
+  - name: v1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
