@@ -1,0 +1,9 @@
+apiVersion: cnat.programming-kubernetes.info/v1alpha1
+kind: At
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: example-at
+spec:
+  schedule: "2020-09-01T16:34:00Z"
+  command: "echo YAY"

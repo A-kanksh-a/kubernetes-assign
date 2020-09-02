@@ -1,0 +1,8 @@
+apiVersion: workloads.infracloud.io/v1beta1
+kind: ContainerSet
+metadata:
+  name: containerset-sample
+spec:
+  # Add fields here
+  replicas: 10
+  image: busybox

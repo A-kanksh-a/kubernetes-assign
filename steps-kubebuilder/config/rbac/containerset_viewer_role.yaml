@@ -1,0 +1,20 @@
+# permissions for end users to view containersets.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: containerset-viewer-role
+rules:
+- apiGroups:
+  - workloads.infracloud.io
+  resources:
+  - containersets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - workloads.infracloud.io
+  resources:
+  - containersets/status
+  verbs:
+  - get

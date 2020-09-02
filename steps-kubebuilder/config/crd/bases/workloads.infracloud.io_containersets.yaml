@@ -1,0 +1,70 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.5
+  creationTimestamp: null
+  name: containersets.workloads.infracloud.io
+spec:
+  group: workloads.infracloud.io
+  names:
+    kind: ContainerSet
+    listKind: ContainerSetList
+    plural: containersets
+    singular: containerset
+  scope: Namespaced
+  subresources:
+    status: {}
+  validation:
+    openAPIV3Schema:
+      description: ContainerSet is the Schema for the containersets API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: ContainerSetSpec defines the desired state of ContainerSet
+          properties:
+            image:
+              description: image is the container image to run.  Image must have a
+                tag.
+              type: string
+            replicas:
+              description: Replicas is an example field of ContainerSet. Edit ContainerSet_types.go
+                to remove/update
+              format: int32
+              type: integer
+          type: object
+        status:
+          description: ContainerSetStatus defines the observed state of ContainerSet
+          properties:
+            healthyReplicas:
+              description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                of cluster Important: Run "make" to regenerate code after modifying
+                this file'
+              format: int32
+              type: integer
+          type: object
+      type: object
+  version: v1beta1
+  versions:
+  - name: v1beta1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
