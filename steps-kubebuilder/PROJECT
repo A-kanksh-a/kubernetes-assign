@@ -1,0 +1,7 @@
+domain: infracloud.io
+repo: github.com/programming-kubernetes/cnat/steps-kubebuilder
+resources:
+- group: workloads
+  kind: ContainerSet
+  version: v1beta1
+version: "2"
